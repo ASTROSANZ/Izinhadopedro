@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha Amada</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fce4ec; /* Cor de fundo rosa claro */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      overflow: hidden; /* Evita scroll */
+    }
+
+    .container {
+      position: relative;
+      width: 90%; /* Garante que o conteúdo caiba em telas menores */
+      max-width: 500px; /* Limita o tamanho em telas maiores */
+    }
+
+    .foto-amada {
+      width: 100%; /* Faz a imagem de fundo ocupar toda a largura do container */
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .foto-central {
+      position: absolute;
+      top: 36%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 150px; /* Tamanho da imagem menor no centro */
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      border: 1px solid #fff;
+    }
+
+    p {
+      color: #333;
+      font-size: 16px; /* Fonte menor para caber na tela */
+      font-weight: bold;
+      margin-top: 20px;
+      word-wrap: break-word; /* Garante que o texto quebre em linhas */
+    }
+
+    button {
+      background-color: #ff66b2;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 14px; /* Ajuste para telas menores */
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #ff3385;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Imagem de fundo -->
+    <img src="fundo.png" alt="Imagem existente" class="foto-amada">
+
+    <!-- Imagem centralizada -->
+    <img src="central.png" alt="Imagem central" class="foto-central">
+
+    <!-- Música que lembra você -->
+    <p>Eu te dediquei essa música quando te conheci e vou continuar dedicando até o dia que nós nos casarmos ao som dela.</p>
+
+    <!-- Áudio com botão de controle -->
+    <audio id="audio" preload="auto">
+      <source src="musica.mp3" type="audio/mp3">
+      Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <!-- Botão para tocar o áudio -->
+    <button onclick="playAudio()">Escutar</button>
+  </div>
+
+  <script>
+    // Função para reproduzir o áudio ao clicar no botão
+    function playAudio() {
+      const audio = document.getElementById('audio');
+      audio.play();
+    }
+  </script>
+</body>
+</html>
